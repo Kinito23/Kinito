@@ -38,7 +38,7 @@ button {
     border: none;
     outline: none;
     color: #ffff;
-    background: black;
+    background: grey;
     cursor: pointer;
     position: relative;
     z-index: 0;
