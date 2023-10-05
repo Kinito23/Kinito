@@ -1,0 +1,104 @@
+body {
+    background-color: black;
+}
+
+.grandparent {
+    position: absolute;
+    width: 767px;
+    height: 767px;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+}
+
+.parent {
+    font-style: italic;
+    font-size: x-large;
+    font-weight: bolder;
+    position: relative;
+    background-color: yellow;
+    padding: 200px;
+    border: 5px solid white;
+    border-radius: 30px;
+    text-align: center;
+
+}
+
+.child1 {
+    position: absolute;
+    bottom: 40%;
+    left: 45%;
+
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffff;
+    background: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+button::before {
+    content: '';
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00cb,
+        #ff0000
+    );
+
+    position:absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    animation: glow 15s linear infinite;
+
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+button::after {
+    z-index: -1,;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
